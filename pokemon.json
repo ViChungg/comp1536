@@ -1,2 +1,92 @@
 {
+  "Bulbasaur": {
+    "type": "grass",
+    "img": "img/bulbasaur.png",
+    "number": "1"
+  },
+  "Oddish": {
+    "type": "grass",
+    "img": "img/oddish.png",
+    "number": "43"
+  },
+  "Gastly": {
+    "type": "ghost",
+    "img": "img/gastly.png",
+    "number": "92"
+  },
+  "Gengar": {
+    "type": "ghost",
+    "img": "img/gengar.png",
+    "number": "94"
+  },
+  "Pikachu": {
+    "type": "electric",
+    "img": "img/pikachu.png",
+    "number": "25"
+  },
+  "Voltorb": {
+    "type": "electric",
+    "img": "img/voltorb.png",
+    "number": "100"
+  },
+  "Alakazam": {
+    "type": "psychic",
+    "img": "img/alakazam.png",
+    "number": "65"
+  },
+  "Mewtwo": {
+    "type": "psychic",
+    "img": "img/mewtwo.png",
+    "number": "151"
+  },
+  "Geodude": {
+    "type": "rock",
+    "img": "img/geodude.png",
+    "number": "74"
+  },
+  "Onix": {
+    "type": "rock",
+    "img": "img/onix.png",
+    "number": "95"
+  },
+  "Charmander": {
+    "type": "fire",
+    "img": "img/charmander.png",
+    "number": "4"
+  },
+  "Ponyta": {
+    "type": "fire",
+    "img": "img/ponyta.png",
+    "number": "77"
+  },
+  "Diglett": {
+    "type": "ground",
+    "img": "img/diglett.png",
+    "number": "50"
+  },
+  "Cubone": {
+    "type": "ground",
+    "img": "img/cubone.png",
+    "number": "104"
+  },
+  "Beedrill": {
+    "type": "bug",
+    "img": "img/beedrill.png",
+    "number": "15"
+  },
+  "Butterfree": {
+    "type": "bug",
+    "img": "img/butterfree.png",
+    "number": "12"
+  },
+  "Articuno": {
+    "type": "flying",
+    "img": "img/articuno.png",
+    "number": "144"
+  },
+  "Zapdos": {
+    "type": "flying",
+    "img": "img/zapdos.png",
+    "number": "145"
+  }
 }
