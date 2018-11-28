@@ -5,23 +5,23 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" type="text/css" href="pokemon.css">
+  <link rel="stylesheet" type="text/css" href="css/pokemon.css">
 </head>
 <body>
   <div id="container">
     <div id="left-side" class="box">
       <div id="banner">Banner here!</div>
-      <div id="img-display">Image displayed here</div>
+      <div id="img-display">
+        <!-- information will appear here -->
+      </div>
     </div>
 
     <div id="right-side" class="box">
-      <div id="info-display">
-        <div id="info">Information here</div>
-        <button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;</button>
+      <div id="pokemon-list">
+        <!-- Pokemon will appear here -->
       </div>
       <div id="button-container">
-        <button type="button">Grass</button>
+        <button type="button" onclick="">Grass</button>
         <button type="button">Ghost</button>
         <button type="button">Water</button>
         <button type="button">Electric</button>
@@ -34,5 +34,7 @@
       </div>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/pokemon.js"></script>
 </body>
 </html>
