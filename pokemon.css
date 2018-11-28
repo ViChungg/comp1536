@@ -1,0 +1,53 @@
+body {
+	background-color: red;
+}
+
+#container {
+	background-color: red;
+	display: flex;
+}
+
+.box {
+	border: 1px solid black;
+}
+
+/* Left side CSS */
+#left-side {
+	flex: 0 0 50%;
+}
+
+#banner {
+	background-color: pink;
+	height: 7vw;
+}
+
+#img-display {
+	background-color: blue;
+	margin: 5vw;
+	height: 20vw;
+}
+
+/* Right side CSS */
+#right-side {
+	flex: 0 0 50%;
+}
+
+#info-display {
+	background-color: yellow;
+	margin: 15vw 5vw 5vw 5vw;
+	height: 15vw;
+}
+
+#button-container {
+	background-color: green;
+	text-align: center;
+}
+
+button {
+	font-size: 1.3vw;
+	flex-shrink: 1;
+	padding: 0.5em;
+	margin: 0.5em;
+	width: 15vw;
+}
+
