@@ -41,11 +41,23 @@ app.get('/ajax-GET-list', function (req, res) {
     //console.log(req.query['format']);
     let formatOfResponse = req.query['format'];
     let dataList = null;
+    let pokType = req.query['pokType'];
 
     if(formatOfResponse == 'html-list') {
 
         res.setHeader('Content-Type', 'text/html');
-        dataList = lists.getHTML();
+        if (pokType == 'rock') {
+            dataList = lists.getRock();
+        } else if (pokType == 'fire') {
+            dataList = lists.getFire();
+        } else if (pokType == 'ground') {
+            dataList = lists.getGround();
+        } else if (pokType == 'bug') {
+            dataList = lists.getBug();
+        } else if (pokType == 'flying') {
+            dataList = lists.getFlying();
+        }
+        
         res.send(dataList);
 
     } else if(formatOfResponse == 'json-list') {

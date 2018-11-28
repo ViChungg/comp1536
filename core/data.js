@@ -1,13 +1,35 @@
-let grass = "<ul><li>Bulbasaur</li><li>Oddish</li></ul>";
-
-let ghost = ["Gastly", "Gengar"];
+let rock = "<ul><li>Geodude</li><li>Onix</li></ul>";
+let fire = "<ul><li>Charmander</li><li>Ponyta</li></ul>";
+let ground = "<ul><li>Diglet</li><li>Cubone</li></ul>";
+let bug = "<ul><li>Beedrill</li><li>Butterfree</li></ul>";
+let flying = "<ul><li>Articuno</li><li>Zapdos</li></ul>";
 
 module.exports = {
-  getGrass: function () {
-      console.log("called: getHTML");
-      // Note: this could be from a DB, for now it's just hard-coded
-      return grass;
+  getRock: function () {
+      console.log("called: getRock");
+      return rock;
   },
+
+  getFire: function () {
+      console.log("called: getFire");
+      return fire;
+  },
+
+  getGround: function () {
+      console.log("called: getGround");
+      return ground;
+  },
+
+  getBug: function () {
+      console.log("called: getPoison");
+      return bug;
+  },
+
+  getFlying: function () {
+      console.log("called: getFlying");
+      return flying;
+  },
+
   getJSON: function () {
       console.log("called: getJSON");
       // Note: this could be from a DB, for now it's just hard-coded

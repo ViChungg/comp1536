@@ -36,6 +36,19 @@ body {
 	background-color: yellow;
 	margin: 15vw 5vw 5vw 5vw;
 	height: 15vw;
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	display: inline-block;
+	width: 50%;
+	margin: 0;
 }
 
 #button-container {

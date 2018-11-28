@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
     // CLEAR THE DATE
-    $('#mainMenu #clearDate').click(function(e) {
+    /*$('#grass').click(function(e) {
         // don't allow the anchor to visit the link
         e.preventDefault();
-        $("#p1").html("Date to go here.");
-    });
+        $("#pokemon-list").html("Date to go here.");
+    });*/
 
     // CONTACT THE SERVER AND GET THE DATE FROM THE SERVER
     $('#mainMenu #getDate').click(function(e) {
@@ -58,8 +58,8 @@ $(document).ready(function() {
         });
     });
 
-    // GET A LIST OF 'THINGS' FROM THE SERVER AS HTML DATA
-    $('#mainMenu #getHTMLList').click(function(e) {
+    // GET A LIST OF ROCK POKEMON FROM THE SERVER AS HTML DATA
+    $('#button-container #rock').click(function(e) {
 
         // don't allow the anchor to visit the link
         e.preventDefault();
@@ -68,14 +68,110 @@ $(document).ready(function() {
             url: "/ajax-GET-list",
             dataType: "html",
             type: "GET",
-            data: { format: "html-list"},
+            data: { format: "html-list", pokType: "rock"},
             success: function(data) {
                 console.log("SUCCESS HTML:", data);
-                $("#content").html(data);
+                $("#pokemon-list").html(data);
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                $("#p1").text(jqXHR.statusText);
+                $("#pokemon-list").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+
+        });
+    });
+
+    // GET A LIST OF FIRE POKEMON FROM THE SERVER AS HTML DATA
+    $('#button-container #fire').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "html",
+            type: "GET",
+            data: { format: "html-list", pokType: "fire"},
+            success: function(data) {
+                console.log("SUCCESS HTML:", data);
+                $("#pokemon-list").html(data);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#pokemon-list").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+
+        });
+    });
+
+    // GET A LIST OF GROUND POKEMON FROM THE SERVER AS HTML DATA
+    $('#button-container #ground').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "html",
+            type: "GET",
+            data: { format: "html-list", pokType: "ground"},
+            success: function(data) {
+                console.log("SUCCESS HTML:", data);
+                $("#pokemon-list").html(data);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#pokemon-list").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+
+        });
+    });
+
+    // GET A LIST OF BUG POKEMON FROM THE SERVER AS HTML DATA
+    $('#button-container #bug').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "html",
+            type: "GET",
+            data: { format: "html-list", pokType: "bug"},
+            success: function(data) {
+                console.log("SUCCESS HTML:", data);
+                $("#pokemon-list").html(data);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#pokemon-list").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+
+        });
+    });
+
+    // GET A LIST OF FLYING POKEMON FROM THE SERVER AS HTML DATA
+    $('#button-container #flying').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "html",
+            type: "GET",
+            data: { format: "html-list", pokType: "flying"},
+            success: function(data) {
+                console.log("SUCCESS HTML:", data);
+                $("#pokemon-list").html(data);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#pokemon-list").text(jqXHR.statusText);
                 console.log("ERROR:", jqXHR, textStatus, errorThrown);
             }
 
