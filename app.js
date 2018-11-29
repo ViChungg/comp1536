@@ -22,8 +22,8 @@ app.get('/', function (req, res) {
     res.send(dom.serialize());
 });
 
-app.use('/js', express.static('static/js'))
-app.use('/css', express.static('static/css'))
+app.use('/js', express.static('static/js'));
+app.use('/css', express.static('static/css'));
 
 app.get('/ajax-GET', function (req, res) {
 
@@ -33,7 +33,7 @@ app.get('/ajax-GET', function (req, res) {
 
     res.send({ msg: d });
 
-})
+});
 
 app.get('/ajax-GET-list', function (req, res) {
 
@@ -57,13 +57,24 @@ app.get('/ajax-GET-list', function (req, res) {
         } else if (pokType == 'flying') {
             dataList = lists.getFlying();
         }
-        
+
         res.send(dataList);
 
     } else if(formatOfResponse == 'json-list') {
 
         res.setHeader('Content-Type', 'application/json');
-        dataList = lists.getJSON();
+        if (pokType == 'grass') {
+          dataList = lists.getGrass();
+        } else if (pokType == 'ghost') {
+          dataList = lists.getGhost();
+        } else if (pokType == 'electric') {
+          dataList = lists.getElectric();
+        } else if (pokType == 'psychic') {
+          dataList = lists.getPsychic();
+        } else if (pokType == 'water') {
+          dataList = lists.getWater();
+        }
+
         res.send(dataList);
 
     } else {
@@ -90,10 +101,10 @@ app.post('/post-form', function (req, res) {
 // for page not found (i.e., 404)
 app.use(function (req, res, next) {
   res.status(404).send("<html><head><title>Page not found!</title></head><body><p>Nothing here.</p></body></html>");
-})
+});
 
 // RUN SERVER
 let port = 8000;
 app.listen(port, function () {
     console.log('Example app listening on port ' + port + '!');
-})
+});

@@ -180,7 +180,7 @@ $(document).ready(function() {
 
 
     // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
-    $('#mainMenu #getJSONList').click(function(e) {
+    $('#button-container #grass').click(function(e) {
 
         // don't allow the anchor to visit the link
         e.preventDefault();
@@ -189,10 +189,122 @@ $(document).ready(function() {
             url: "/ajax-GET-list",
             dataType: "json",
             type: "GET",
-            data: { format: "json-list"},
+            data: { format: "json-list", pokType: "grass"},
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
-                var div = $("#content");
+                var div = $("#pokemon-list");
+                let htmlStr = "<ul>";
+                for(let i = 0; i < data.length; i++) {
+                    htmlStr += "<li>" + data[i] + "</li>";
+                }
+                htmlStr += "</ul>";
+                div.html(htmlStr);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#p1").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+        });
+    });
+
+    $('#button-container #ghost').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "json",
+            type: "GET",
+            data: { format: "json-list", pokType: "ghost"},
+            success: function(data) {
+                console.log("SUCCESS JSON:", data);
+                var div = $("#pokemon-list");
+                let htmlStr = "<ul>";
+                for(let i = 0; i < data.length; i++) {
+                    htmlStr += "<li>" + data[i] + "</li>";
+                }
+                htmlStr += "</ul>";
+                div.html(htmlStr);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#p1").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+        });
+    });
+
+    $('#button-container #electric').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "json",
+            type: "GET",
+            data: { format: "json-list", pokType: "electric"},
+            success: function(data) {
+                console.log("SUCCESS JSON:", data);
+                var div = $("#pokemon-list");
+                let htmlStr = "<ul>";
+                for(let i = 0; i < data.length; i++) {
+                    htmlStr += "<li>" + data[i] + "</li>";
+                }
+                htmlStr += "</ul>";
+                div.html(htmlStr);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#p1").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+        });
+    });
+
+    $('#button-container #psychic').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "json",
+            type: "GET",
+            data: { format: "json-list", pokType: "psychic"},
+            success: function(data) {
+                console.log("SUCCESS JSON:", data);
+                var div = $("#pokemon-list");
+                let htmlStr = "<ul>";
+                for(let i = 0; i < data.length; i++) {
+                    htmlStr += "<li>" + data[i] + "</li>";
+                }
+                htmlStr += "</ul>";
+                div.html(htmlStr);
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                $("#p1").text(jqXHR.statusText);
+                console.log("ERROR:", jqXHR, textStatus, errorThrown);
+            }
+        });
+    });
+
+    $('#button-container #water').click(function(e) {
+
+        // don't allow the anchor to visit the link
+        e.preventDefault();
+
+        $.ajax({
+            url: "/ajax-GET-list",
+            dataType: "json",
+            type: "GET",
+            data: { format: "json-list", pokType: "water"},
+            success: function(data) {
+                console.log("SUCCESS JSON:", data);
+                var div = $("#pokemon-list");
                 let htmlStr = "<ul>";
                 for(let i = 0; i < data.length; i++) {
                     htmlStr += "<li>" + data[i] + "</li>";
