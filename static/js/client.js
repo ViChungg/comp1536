@@ -235,7 +235,7 @@ $(document).ready(function() {
                 var div = $("#pokemon-list");
                 div.html('');
                 var id = e.target.id;
-                var pokemons = $("<ul></ul>");   
+                var pokemons = $("<ul></ul>");
                 for (x in data) {
                     if (data[x]['type'] == id) {
                         var pokList = $("<li></li>");
@@ -256,7 +256,7 @@ $(document).ready(function() {
     });
 
     // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
-    $(document).on('click', '#pokemon-list .json', function(e){ 
+    $(document).on('click', '#pokemon-list .json', function(e){
         e.preventDefault();
 
         $.ajax({
@@ -269,7 +269,7 @@ $(document).ready(function() {
                 var div = $("#img-display");
                 div.html('');
                 var id = e.target.id;
-                var pokemons = $("<div id='p-info'></div>");   
+                var pokemons = $("<div id='p-info'></div>");
                 for (x in data) {
                     console.log(x + " " + id);
                     if (x == id) {
@@ -277,7 +277,6 @@ $(document).ready(function() {
                         var img = $("<img></img>");
                         img.attr("src", data[x]['img']);
                         pokemons.append(img);
-                        pokemons.append();
                         pokemons.append("(#" + data[x]['number'] + ")" + data[x]['des']);
                     }
                 }
