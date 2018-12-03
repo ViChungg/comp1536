@@ -156,56 +156,66 @@ $(document).ready(function() {
         var id = e.target.id;
         var image = "";
         var number = "";
+        var des = "";
 
-        
         switch (id) {
             case "Geodude":
                 image = "img/geodude.png";
                 number = "74";
+                des = "The longer a Geodude lives, the more its edges are chipped and worn away, making it more rounded in appearance. However, this Pokémon's heart will remain hard, craggy, and rough always."
                 break;
             case "Onix":
                 image = "img/onix.png";
                 number = "95";
+                des = "Onix has a magnet in its brain. It acts as a compass so that this Pokémon does not lose direction while it is tunneling. As it grows older, its body becomes increasingly rounder and smoother."
                 break;
             case "Charmander":
                 image = "img/charmander.png";
                 number = "4";
+                des = "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely."
                 break;
             case "Ponyta":
                 image = "img/ponyta.png";
                 number = "77";
+                des = "Ponyta is very weak at birth. It can barely stand up. This Pokémon becomes stronger by stumbling and falling to keep up with its parent."
                 break;
             case "Diglett":
                 image = "img/diglett.png";
                 number = "50";
+                des = "Diglett are raised in most farms. The reason is simple— wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables."
                 break;
             case "Cubone":
                 image = "img/cubone.png";
                 number = "104";
+                des = "Cubone pines for the mother it will never see again. Seeing a likeness of its mother in the full moon, it cries. The stains on the skull the Pokémon wears are made by the tears it sheds."
                 break;
             case "Beedrill":
                 image = "img/beedrill.png";
                 number = "15";
+                des = "Beedrill is extremely territorial. No one should ever approach its nest—this is for their own safety. If angered, they will attack in a furious swarm."
                 break;
             case "Butterfree":
                 image = "img/butterfree.png";
                 number = "12";
+                des = "Butterfree has a superior ability to search for delicious honey from flowers. It can even search out, extract, and carry honey from flowers that are blooming over six miles from its nest."
                 break;
             case "Articuno":
                 image = "img/articuno.png";
                 number = "144";
+                des = "Articuno is a legendary bird Pokémon that can control ice. The flapping of its wings chills the air. As a result, it is said that when this Pokémon flies, snow will fall."
                 break;
             case "Zapdos":
                 image = "img/zapdos.png";
                 number = "145";
+                des = "Zapdos is a legendary bird Pokémon that has the ability to control electricity. It usually lives in thunderclouds. The Pokémon gains power if it is stricken by lightning bolts."
                 break;
         }
         var pokemons = $("<div id='p-info'></div>");
         var img = $("<img></img>");
+
         img.attr("src", image);
         pokemons.append(img);
-        pokemons.append(number);
-        
+        pokemons.append("(#" + number + ")" + des);
         div.append(pokemons);
     });
 
@@ -225,7 +235,7 @@ $(document).ready(function() {
                 var div = $("#pokemon-list");
                 div.html('');
                 var id = e.target.id;
-                var pokemons = $("<ul></ul>");   
+                var pokemons = $("<ul></ul>");
                 for (x in data) {
                     if (data[x]['type'] == id) {
                         var pokList = $("<li></li>");
@@ -246,7 +256,7 @@ $(document).ready(function() {
     });
 
     // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
-    $(document).on('click', '#pokemon-list .json', function(e){ 
+    $(document).on('click', '#pokemon-list .json', function(e){
         e.preventDefault();
 
         $.ajax({
@@ -259,7 +269,7 @@ $(document).ready(function() {
                 var div = $("#img-display");
                 div.html('');
                 var id = e.target.id;
-                var pokemons = $("<div id='p-info'></div>");   
+                var pokemons = $("<div id='p-info'></div>");
                 for (x in data) {
                     console.log(x + " " + id);
                     if (x == id) {
@@ -267,10 +277,9 @@ $(document).ready(function() {
                         var img = $("<img></img>");
                         img.attr("src", data[x]['img']);
                         pokemons.append(img);
-                        pokemons.append(data[x]['number']);
+                        pokemons.append("(#" + data[x]['number'] + ")" + data[x]['des']);
                     }
                 }
-                
                 div.append(pokemons);
 
             },
@@ -279,7 +288,7 @@ $(document).ready(function() {
                 console.log("ERROR:", jqXHR, textStatus, errorThrown);
             }
         });
-    });    
+    });
 
     // PERFORM A HTTP POST, AND GET A RESPONSE FROM THE SERVER
     $('#submit').click(function(e) {
