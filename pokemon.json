@@ -1,9 +1,9 @@
 {
-  "Bulbasaur": [{
+  "Bulbasaur": {
     "type": "grass",
     "img": "img/bulbasaur.png",
     "number": "1"
-  }],
+  },
   "Oddish": {
     "type": "grass",
     "img": "img/oddish.png",

@@ -64,17 +64,8 @@ app.get('/ajax-GET-list', function (req, res) {
     } else if(formatOfResponse == 'json-list') {
 
         res.setHeader('Content-Type', 'application/json');
-        if (pokType == 'grass') {
-          dataList = lists.getGrass();
-        } else if (pokType == 'ghost') {
-          dataList = lists.getGhost();
-        } else if (pokType == 'electric') {
-          dataList = lists.getElectric();
-        } else if (pokType == 'psychic') {
-          dataList = lists.getPsychic();
-        } else if (pokType == 'water') {
-          dataList = lists.getWater();
-        }
+        dataList = lists.getJSON();
+        
 
         res.send(dataList);
 
