@@ -1,35 +1,5 @@
 $(document).ready(function() {
 
-    // CLEAR THE DATE
-    /*$('#grass').click(function(e) {
-        // don't allow the anchor to visit the link
-        e.preventDefault();
-        $("#pokemon-list").html("Date to go here.");
-    });*/
-
-    // CONTACT THE SERVER AND GET THE DATE FROM THE SERVER
-    $('#mainMenu #getDate').click(function(e) {
-
-        // don't allow the anchor to visit the link
-        e.preventDefault();
-
-        $.ajax({
-            url: "/ajax-GET",
-            dataType: "json",
-            type: "GET",
-            success: function(data) {
-                $("#p1").text(data['msg']);
-                console.log("SUCCESS:", data);
-
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $("#p1").text(jqXHR.statusText);
-                console.log("ERROR:", jqXHR, textStatus, errorThrown);
-            }
-
-        });
-    });
-
     // INTENTIONALLY GET A 404 FROM THE SERVER
     $('#mainMenu #getBadURL').click(function(e) {
 
@@ -178,9 +148,69 @@ $(document).ready(function() {
         });
     });
 
+    $(document).on('click', '#pokemon-list .html', function(e){
+        e.preventDefault();
+        console.log(e.target.id);
+        var div = $("#img-display");
+        div.html('');
+        var id = e.target.id;
+        var image = "";
+        var number = "";
+
+        
+        switch (id) {
+            case "Geodude":
+                image = "img/geodude.png";
+                number = "74";
+                break;
+            case "Onix":
+                image = "img/onix.png";
+                number = "95";
+                break;
+            case "Charmander":
+                image = "img/charmander.png";
+                number = "4";
+                break;
+            case "Ponyta":
+                image = "img/ponyta.png";
+                number = "77";
+                break;
+            case "Diglett":
+                image = "img/diglett.png";
+                number = "50";
+                break;
+            case "Cubone":
+                image = "img/cubone.png";
+                number = "104";
+                break;
+            case "Beedrill":
+                image = "img/beedrill.png";
+                number = "15";
+                break;
+            case "Butterfree":
+                image = "img/butterfree.png";
+                number = "12";
+                break;
+            case "Articuno":
+                image = "img/articuno.png";
+                number = "144";
+                break;
+            case "Zapdos":
+                image = "img/zapdos.png";
+                number = "145";
+                break;
+        }
+        var pokemons = $("<div id='p-info'></div>");
+        var img = $("<img></img>");
+        img.attr("src", image);
+        pokemons.append(img);
+        pokemons.append(number);
+        
+        div.append(pokemons);
+    });
 
     // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
-    $('#button-container #grass').click(function(e) {
+    $('#button-container #grass, #ghost, #water, #electric, #psychic').click(function(e) {
 
         // don't allow the anchor to visit the link
         e.preventDefault();
@@ -193,12 +223,18 @@ $(document).ready(function() {
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
                 var div = $("#pokemon-list");
-                let htmlStr = "<ul>";
-                for(let i = 0; i < data.length; i++) {
-                    htmlStr += "<li>" + data[i] + "</li>";
-                }
-                htmlStr += "</ul>";
-                div.html(htmlStr);
+                div.html('');
+                var id = e.target.id;
+                var pokemons = $("<ul></ul>");   
+                for (x in data) {
+                    if (data[x]['type'] == id) {
+                        var pokList = $("<li></li>");
+                        var pok = $("<button type='button' class='json'>" + x + "</button>");
+                        pok.attr("id", x);
+                        pokList.append(pok);
+                        pokemons.append(pokList);
+                    }
+                div.append(pokemons);
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
@@ -208,25 +244,33 @@ $(document).ready(function() {
         });
     });
 
-    $('#button-container #ghost').click(function(e) {
-
-        // don't allow the anchor to visit the link
+    // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
+    $(document).on('click', '#pokemon-list .json', function(e){ 
         e.preventDefault();
 
         $.ajax({
             url: "/ajax-GET-list",
             dataType: "json",
             type: "GET",
-            data: { format: "json-list", pokType: "ghost"},
+            data: { format: "json-list"},
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
-                var div = $("#pokemon-list");
-                let htmlStr = "<ul>";
-                for(let i = 0; i < data.length; i++) {
-                    htmlStr += "<li>" + data[i] + "</li>";
+                var div = $("#img-display");
+                div.html('');
+                var id = e.target.id;
+                var pokemons = $("<div id='p-info'></div>");   
+                for (x in data) {
+                    console.log(x + " " + id);
+                    if (x == id) {
+                        console.log(data[x]['img']);
+                        var img = $("<img></img>");
+                        img.attr("src", data[x]['img']);
+                        pokemons.append(img);
+                        pokemons.append(data[x]['number']);
+                    }
                 }
-                htmlStr += "</ul>";
-                div.html(htmlStr);
+                
+                div.append(pokemons);
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
@@ -234,92 +278,7 @@ $(document).ready(function() {
                 console.log("ERROR:", jqXHR, textStatus, errorThrown);
             }
         });
-    });
-
-    $('#button-container #electric').click(function(e) {
-
-        // don't allow the anchor to visit the link
-        e.preventDefault();
-
-        $.ajax({
-            url: "/ajax-GET-list",
-            dataType: "json",
-            type: "GET",
-            data: { format: "json-list", pokType: "electric"},
-            success: function(data) {
-                console.log("SUCCESS JSON:", data);
-                var div = $("#pokemon-list");
-                let htmlStr = "<ul>";
-                for(let i = 0; i < data.length; i++) {
-                    htmlStr += "<li>" + data[i] + "</li>";
-                }
-                htmlStr += "</ul>";
-                div.html(htmlStr);
-
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $("#p1").text(jqXHR.statusText);
-                console.log("ERROR:", jqXHR, textStatus, errorThrown);
-            }
-        });
-    });
-
-    $('#button-container #psychic').click(function(e) {
-
-        // don't allow the anchor to visit the link
-        e.preventDefault();
-
-        $.ajax({
-            url: "/ajax-GET-list",
-            dataType: "json",
-            type: "GET",
-            data: { format: "json-list", pokType: "psychic"},
-            success: function(data) {
-                console.log("SUCCESS JSON:", data);
-                var div = $("#pokemon-list");
-                let htmlStr = "<ul>";
-                for(let i = 0; i < data.length; i++) {
-                    htmlStr += "<li>" + data[i] + "</li>";
-                }
-                htmlStr += "</ul>";
-                div.html(htmlStr);
-
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $("#p1").text(jqXHR.statusText);
-                console.log("ERROR:", jqXHR, textStatus, errorThrown);
-            }
-        });
-    });
-
-    $('#button-container #water').click(function(e) {
-
-        // don't allow the anchor to visit the link
-        e.preventDefault();
-
-        $.ajax({
-            url: "/ajax-GET-list",
-            dataType: "json",
-            type: "GET",
-            data: { format: "json-list", pokType: "water"},
-            success: function(data) {
-                console.log("SUCCESS JSON:", data);
-                var div = $("#pokemon-list");
-                let htmlStr = "<ul>";
-                for(let i = 0; i < data.length; i++) {
-                    htmlStr += "<li>" + data[i] + "</li>";
-                }
-                htmlStr += "</ul>";
-                div.html(htmlStr);
-
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                $("#p1").text(jqXHR.statusText);
-                console.log("ERROR:", jqXHR, textStatus, errorThrown);
-            }
-        });
-    });
-
+    });    
 
     // PERFORM A HTTP POST, AND GET A RESPONSE FROM THE SERVER
     $('#submit').click(function(e) {

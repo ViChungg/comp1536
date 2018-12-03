@@ -22,8 +22,9 @@ app.get('/', function (req, res) {
     res.send(dom.serialize());
 });
 
-app.use('/js', express.static('static/js'));
-app.use('/css', express.static('static/css'));
+app.use('/js', express.static('static/js'))
+app.use('/css', express.static('static/css'))
+app.use('/img', express.static('static/img'))
 
 app.get('/ajax-GET', function (req, res) {
 
