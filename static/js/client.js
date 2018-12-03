@@ -211,6 +211,7 @@ $(document).ready(function() {
 
     // GET A LIST OF 'THINGS' FROM THE SERVER AS JSON DATA
     $('#button-container #grass, #ghost, #water, #electric, #psychic').click(function(e) {
+
         // don't allow the anchor to visit the link
         e.preventDefault();
 
@@ -218,7 +219,7 @@ $(document).ready(function() {
             url: "/ajax-GET-list",
             dataType: "json",
             type: "GET",
-            data: { format: "json-list"},
+            data: { format: "json-list", pokType: "grass"},
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
                 var div = $("#pokemon-list");
@@ -233,8 +234,6 @@ $(document).ready(function() {
                         pokList.append(pok);
                         pokemons.append(pokList);
                     }
-                }
-                
                 div.append(pokemons);
 
             },

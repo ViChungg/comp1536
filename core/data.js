@@ -1,3 +1,4 @@
+
 let rock = "<ul><li><button id='Geodude' class='html'>Geodude</button></li>" 
 + "<li><button id='Onix' class='html'>Onix</button></li></ul>";
 let fire = "<ul><li><button id='Charmander' class='html'>Charmander</button></li>"
@@ -86,7 +87,7 @@ module.exports = {
       console.log("called: getFlying");
       return flying;
   },
-
+  
   getJSON: function () {
       console.log("called: getJSON");
       // Note: this could be from a DB, for now it's just hard-coded
@@ -96,4 +97,4 @@ module.exports = {
 
 var someOtherFunction = function () {
     console.log("Can't touch this!");
-}
+};
