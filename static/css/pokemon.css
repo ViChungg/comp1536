@@ -5,6 +5,7 @@ body {
 #container {
 	background-color: red;
 	display: flex;
+	padding: 5vw;
 }
 
 .box {
@@ -17,26 +18,49 @@ body {
 }
 
 #banner {
-	background-color: pink;
+	background-color: red;
+	border-bottom: 1px solid black;
 	height: 7vw;
 }
 
 #img-display {
-	background-color: blue;
+	background-color: black;
+	border: 1px solid black;
+	border-radius: 5px;
 	margin: 5vw;
+	height: 30vw;
+	padding: 2vw;
+}
+
+#p-info {
+	display: flex;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 1vw;
 	height: 20vw;
+}
+
+#p-info img {
+	flex: 0 0;
 }
 
 /* Right side CSS */
 #right-side {
 	flex: 0 0 50%;
+	padding-bottom: 5vw;
 }
 
 #pokemon-list {
-	background-color: yellow;
-	margin: 15vw 5vw 5vw 5vw;
+	display: flex;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 10vw 5vw 5vw 5vw;
 	height: 15vw;
 	text-align: center;
+	align-items: center;
+	justify-content: center;
 }
 
 ul {
@@ -52,7 +76,7 @@ ul li {
 }
 
 #button-container {
-	background-color: green;
+	background-color: red;
 	text-align: center;
 }
 

@@ -1,9 +1,9 @@
 {
-  "Bulbasaur": {
+  "Bulbasaur": [{
     "type": "grass",
     "img": "img/bulbasaur.png",
     "number": "1"
-  },
+  }],
   "Oddish": {
     "type": "grass",
     "img": "img/oddish.png",
@@ -38,6 +38,16 @@
     "type": "psychic",
     "img": "img/mewtwo.png",
     "number": "151"
+  },
+  "Squirtle": {
+    "type": "water",
+    "img": "img/squirtle.png",
+    "number": "7"
+  },
+  "Starmie": {
+    "type": "water",
+    "img": "img/starmie.png",
+    "number": "121"
   },
   "Geodude": {
     "type": "rock",
