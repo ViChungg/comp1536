@@ -5,7 +5,7 @@ body {
 #container {
 	background-color: red;
 	display: flex;
-	padding: 5vw;
+	padding: 1vw;
 }
 
 .box {
@@ -49,6 +49,7 @@ body {
 #right-side {
 	flex: 0 0 50%;
 	padding-bottom: 5vw;
+	height: 50vw;
 }
 
 #pokemon-list {
@@ -56,7 +57,7 @@ body {
 	background-color: white;
 	border: 1px solid black;
 	border-radius: 5px;
-	margin: 10vw 5vw 5vw 5vw;
+	margin: 10vw 5vw 1vw 5vw;
 	height: 15vw;
 	text-align: center;
 	align-items: center;
@@ -78,13 +79,15 @@ ul li {
 #button-container {
 	background-color: red;
 	text-align: center;
+	width: 30vw;
+	margin-left: 9vw;
 }
 
 button {
-	font-size: 1.3vw;
+	font-size: 1vw;
 	flex-shrink: 1;
 	padding: 0.5em;
 	margin: 0.5em;
-	width: 15vw;
+	width: 10vw;
 }
 
