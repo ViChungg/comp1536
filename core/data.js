@@ -1,4 +1,3 @@
-
 let rock = "<ul><li><button id='Geodude' class='html'>Geodude</button></li>" 
 + "<li><button id='Onix' class='html'>Onix</button></li></ul>";
 let fire = "<ul><li><button id='Charmander' class='html'>Charmander</button></li>"

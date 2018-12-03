@@ -219,7 +219,7 @@ $(document).ready(function() {
             url: "/ajax-GET-list",
             dataType: "json",
             type: "GET",
-            data: { format: "json-list", pokType: "grass"},
+            data: { format: "json-list" },
             success: function(data) {
                 console.log("SUCCESS JSON:", data);
                 var div = $("#pokemon-list");
@@ -234,6 +234,7 @@ $(document).ready(function() {
                         pokList.append(pok);
                         pokemons.append(pokList);
                     }
+                }
                 div.append(pokemons);
 
             },
