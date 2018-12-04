@@ -2,11 +2,14 @@
 
 body {
 	background-color: white;
+	background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/H0MA-uKSipsekm5s/simple-natural-background-with-closeup-of-fresh-green-grass-field-and-blue-sky-with-blurred-clouds-at-spring-day-4k_ht5dis7fl_thumbnail-full01.png');
 	font-family: 'Roboto', sans-serif;
 }
 
 #container {
 	background-color: white;
+	background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/H0MA-uKSipsekm5s/simple-natural-background-with-closeup-of-fresh-green-grass-field-and-blue-sky-with-blurred-clouds-at-spring-day-4k_ht5dis7fl_thumbnail-full01.png');
+	background-size: cover;
 	display: flex;
 	padding: 1vw 0 1vw 10vw;
 	align-items: flex-end;
